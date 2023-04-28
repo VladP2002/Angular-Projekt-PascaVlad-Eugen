@@ -1,0 +1,34 @@
+<div class="bckimg">
+    <section>
+        <mat-card class="homeCard">
+            <mat-card-title>
+                <mat-icon>whatshot</mat-icon>
+                FC Favorites United
+                <mat-icon>whatshot</mat-icon>
+            </mat-card-title>
+            <mat-card-header>
+                <mat-card-title>Welcome!</mat-card-title>
+            </mat-card-header>
+                <mat-drawer-container class="homeContainer" autosize>
+                    <mat-drawer #drawer class="homeSidenav" mode="side">
+                    <p>You have the following options:</p>
+                        <button mat-fab routerLink="/register-player"> 
+                            <mat-icon>assignment_ind</mat-icon>Register players</button>
+                        <button mat-fab routerLink="/see-all-players">
+                            <mat-icon>group</mat-icon> See current players</button>
+                        <button mat-fab routerLink="/gallery">
+                            <mat-icon>collections</mat-icon> Gallery </button>
+                    </mat-drawer>
+                    <mat-card-subtitle>Welcome to FC Favorites United! Your own virtual club where you can register, collect
+                         and see all your favorite footballers. Toggle the menu to see our features.
+                    </mat-card-subtitle>
+                    
+                    <mat-card-actions class="homeSidenavContent">
+                        <button type="button" mat-button (click)="drawer.toggle()">
+                            <mat-icon>menu</mat-icon>Toggle Menu</button>
+                    </mat-card-actions>
+                </mat-drawer-container>
+
+        </mat-card>
+    </section>
+</div>

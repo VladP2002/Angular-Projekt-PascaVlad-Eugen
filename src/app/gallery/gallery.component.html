@@ -1,0 +1,23 @@
+<div class="bckimg">
+    <mat-card class="galleryCard">
+        <mat-card-header>
+            <button mat-fab routerLink="">
+                <mat-icon>home</mat-icon>Home</button>
+            <button mat-fab routerLink="/register-player"> 
+                <mat-icon>assignment_ind</mat-icon>Register players</button>
+            <button mat-fab routerLink="/see-all-players">
+                <mat-icon>group</mat-icon> See current players</button>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="slideshow-container">
+                <div class="slideshow-item" *ngFor="let image of images; let i = index;" 
+                  [hidden]="currentIndex !== i">
+                  <img [src]="images[currentIndex].url" [alt]="images[currentIndex].alt" (click)="nextImage()" />
+                  <div class="alt-text" *ngIf="images[currentIndex].alt">
+                    {{ images[currentIndex].alt }}
+                  </div>
+                </div>
+            </div>              
+        </mat-card-content>
+    </mat-card>
+</div>

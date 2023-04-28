@@ -1,0 +1,77 @@
+<div class="bckimg">
+    <section>
+        <mat-card class="registerForm">
+            <mat-card-header>
+                <button mat-fab routerLink="">
+                    <mat-icon>home</mat-icon>Home
+                </button>
+                <button mat-fab routerLink="/see-all-players">
+                    <mat-icon>group</mat-icon> See current players</button>
+                <button mat-fab routerLink="/gallery">
+                    <mat-icon>collections</mat-icon> Gallery </button>
+            </mat-card-header>
+            <mat-card-content>Enter below the player's details:
+                <td>
+                <mat-form-field class="registerName">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" [(ngModel)]="newPlayerName">
+                    <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                </td>
+                <br>
+                <td>
+                <mat-form-field class="registerSurname">
+                    <mat-label>Surname</mat-label>
+                    <input matInput type="text" [(ngModel)]="newPlayerSurname">
+                    <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                </td>
+                <br>
+                <mat-form-field class="registerYear">
+                    <mat-label>Year of birth</mat-label>
+                    <input matInput type="number" [(ngModel)]="newPlayerBirthYear" min="1900" max="2010">
+                    <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="registerHeight">
+                    <mat-label>Height(cm)</mat-label>
+                    <input matInput type="number" [(ngModel)]="newPlayerHeight" min="120" max="240">
+                    <button *ngIf="inputValue" matSuffix mat-icon-button aria-label="Clear" (click)="inputValue=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Position</mat-label>
+                <mat-select name="position" [(ngModel)]="newPlayerPosition">
+                    <!-- <mat-option *ngFor="let position of positions" [value]="position.code">
+                        {{position.name}}
+                    </mat-option> -->
+                    <mat-option value="GK">GK-Goalkeeper</mat-option>
+                    <mat-option value="RB">RB-Right-Back</mat-option>
+                    <mat-option value="CB">CB-Centre-Back</mat-option>
+                    <mat-option value="LB">LB-Left-Back</mat-option>
+                    <mat-option value="DM">DM-Defensive Midfielder</mat-option>
+                    <mat-option value="CM">CM-Central Midfielder</mat-option>
+                    <mat-option value="AM">AM-Attacking Midfielder</mat-option>
+                    <mat-option value="RM">RM-Right Midfielder</mat-option>
+                    <mat-option value="LM">LM-Left Midfielder</mat-option>
+                    <mat-option value="RW">RW-Right Winger</mat-option>
+                    <mat-option value="LW">LW-Left Winger</mat-option>
+                    <mat-option value="ST">ST-Striker</mat-option>
+                </mat-select>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-footer>
+                <button mat-raised-button (click)="addPlayer()">
+                <mat-icon>how_to_reg</mat-icon>Submit player</button>
+            </mat-card-footer>
+        </mat-card>
+    </section>
+</div>
